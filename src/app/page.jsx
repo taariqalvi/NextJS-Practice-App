@@ -34,7 +34,7 @@ export default function Home() {
 
       <h2 className={styles.heading}>Image Components in Next Js</h2>
       <h3>Next Js automatically optimize the size of large images</h3>
-      <Image src={vercelImage} />
+      <Image src={vercelImage} alt="vercel-image" />
       <h3>In HTML image tag, it will be used differently and unoptimized</h3>
       <img src={vercelImage.src} alt="vercel-image" />
 
