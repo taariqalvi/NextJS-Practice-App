@@ -37,6 +37,12 @@ export default function Home() {
       <Image src={vercelImage} alt="vercel-image" />
       <h3>In HTML image tag, it will be used differently and unoptimized</h3>
       <img src={vercelImage.src} alt="vercel-image" />
+      <br /><br />
+
+      <h2 className={styles.heading}>Next Js with MongoDB</h2>
+      <button type='button' onClick={() => router.push("/api/products")}>Go to MongoDB API Products Page</button>
+      <br /> <br />
+      <button type='button' onClick={() => router.push("/addProduct")}>Go to Add Products to MongoDB Page</button>
 
     </main>
   )
