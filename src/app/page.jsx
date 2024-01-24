@@ -40,9 +40,9 @@ export default function Home() {
       <br /><br />
 
       <h2 className={styles.heading}>Next Js with MongoDB</h2>
-      <button type='button' onClick={() => router.push("/api/products")}>Go to MongoDB API Products Page</button>
+      <Link href="/api/products">Go to MongoDB API Products Page</Link>
       <br /> <br />
-      <button type='button' onClick={() => router.push("/addProduct")}>Go to Add Products to MongoDB Page</button>
+      <Link href="/addProduct">Go to Add Products to MongoDB Page</Link>
 
     </main>
   )

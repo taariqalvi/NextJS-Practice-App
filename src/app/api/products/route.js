@@ -4,9 +4,10 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 
 export async function GET() {
+    let data = [];
     await mongoose.connect(connectStr);
-    const data = await Product.find();
-    return NextResponse.json(data);
+    data = await Product.find();
+    return NextResponse.json({ products: data });
 }
 
 export async function POST(request) {
@@ -14,5 +15,5 @@ export async function POST(request) {
     await mongoose.connect(connectStr);
     let product = new Product(payload);
     const saveProduct = await product.save();
-    return NextResponse.json(saveProduct);
+    return NextResponse.json({ products: saveProduct });
 }

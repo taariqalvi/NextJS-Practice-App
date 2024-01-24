@@ -11,19 +11,20 @@ export default function AddProduct() {
     const [category, setCategory] = useState("");
 
     const AddProduct = async () => {
-        const result = await fetch("http://localhost:3000/api/products", {
+        let result = await fetch("http://localhost:3000/api/products", {
             method: "POST",
             body: JSON.stringify({ name, price, company, category, color, category })
         });
-        const response = await result.json();
-
-        // Emptying input fields and showing a success message:
+        result = await result.json();
+        if (result) {
+            alert("New product added successfully");
+        }
+        // Emptying input fields:
         setName("");
         setPrice("");
         setCompany("");
         setColor("");
         setCategory("");
-        alert("Date successfully added to Mongo Database");
     }
 
     return (
@@ -37,6 +38,8 @@ export default function AddProduct() {
             <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="Enter product category" className="input" />
 
             <button type="button" className="input" onClick={AddProduct}>Add Product</button>
+            <br /><br />
+            <Link href="/api/products">Go to API Page</Link>
         </div>
     )
 }
