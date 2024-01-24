@@ -16,15 +16,14 @@ export default function AddProduct() {
             body: JSON.stringify({ name, price, company, category, color, category })
         });
         result = await result.json();
-        if (result) {
-            alert("New product added successfully");
-        }
+
         // Emptying input fields:
         setName("");
         setPrice("");
         setCompany("");
         setColor("");
         setCategory("");
+        alert("New product added successfully");
     }
 
     return (
