@@ -13,7 +13,7 @@ export default function AddProduct() {
     const AddProduct = async () => {
         let result = await fetch("http://localhost:3000/api/products", {
             method: "POST",
-            body: JSON.stringify({ name, price, company, category, color, category })
+            body: JSON.stringify({ name, price, company, color, category })
         });
         result = await result.json();
 
