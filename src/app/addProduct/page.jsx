@@ -16,6 +16,14 @@ export default function AddProduct() {
             body: JSON.stringify({ name, price, company, category, color, category })
         });
         const response = await result.json();
+
+        // Emptying input fields and showing a success message:
+        setName("");
+        setPrice("");
+        setCompany("");
+        setColor("");
+        setCategory("");
+        alert("Date successfully added to Mongo Database");
     }
 
     return (
